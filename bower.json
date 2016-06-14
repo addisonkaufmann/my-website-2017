@@ -3,6 +3,7 @@
   "private": "true",
   "devDependencies": {
     "angular": "^1.5.6",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.6"
   }
 }

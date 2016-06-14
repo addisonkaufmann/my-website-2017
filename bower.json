@@ -1,0 +1,8 @@
+{
+  "name": "Trust",
+  "private": "true",
+  "devDependencies": {
+    "angular": "^1.5.6",
+    "angular-ui-router": "^0.3.1"
+  }
+}

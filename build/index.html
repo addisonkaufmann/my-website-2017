@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/styles.min.css">
+
+    <!-- Scripts -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="https://use.fontawesome.com/6c3367570f.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="js/main.min.js"></script>
+
+</head>
+<body ng-app="app">
+
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div ui-view></div>
+    </div>
+
+</body>
+</html>

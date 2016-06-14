@@ -1,0 +1,98 @@
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; }
+  .fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%; }
+
+.logo {
+  height: 100%; }
+
+.overlay-container {
+  position: relative;
+  width: 100%; }
+
+.overlay-item, .overlay-tab, .overlay-text, .overlay-row, .overlay-footer {
+  position: absolute;
+  margin: auto;
+  text-align: center; }
+
+.overlay-tab {
+  top: 0;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  bottom: 85%;
+  border-radius: 0px 0px 15px 15px;
+  background-color: rgba(255, 255, 255, 0.7); }
+
+.overlay-text {
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  top: 70%;
+  color: white; }
+
+.overlay-row {
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  top: 85%;
+  color: white; }
+
+.overlay-footer {
+  top: 0;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  top: 94%;
+  color: white; }
+
+.vignette img {
+  display: block; }
+
+.vignette:after {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0rem -35rem 15rem -13rem rgba(0, 0, 0, 0.7); }
+
+.tile, .tile-light-green, .tile-yellow, .tile-orange, .tile-red, .tile-brown, .tile-purple, .tile-blue, .tile-dark-green {
+  width: 25vw;
+  height: 25vw; }
+
+.tile-light-green {
+  background-color: #81bc5f; }
+
+.tile-yellow {
+  background-color: #f8dc54; }
+
+.tile-orange {
+  background-color: #f6ff49; }
+
+.tile-red {
+  background-color: #f4704a; }
+
+.tile-brown {
+  background-color: #ce9351; }
+
+.tile-purple {
+  background-color: #ba97bf; }
+
+.tile-blue {
+  background-color: #45c0df; }
+
+.tile-dark-green {
+  background-color: #56ae7c; }

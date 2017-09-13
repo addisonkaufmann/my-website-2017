@@ -2,20 +2,15 @@ var app = angular.module('app', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/summary');
+    $urlRouterProvider.otherwise('/home');
     
     $stateProvider
         
         // HOME STATES AND NESTED VIEWS ========================================
 
-        .state('summary', {
-            url: '/summary',
-            templateUrl: 'templates/summary.html'
-        })
-
         .state('home', {
             url: '/home',
-            templateUrl: 'templates/dashboard.html'
+            templateUrl: 'templates/partial-home.html'
         })
         
         // nested list with custom controller
@@ -33,15 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             template: 'I could sure use a drink right now.'
         })
 
-        .state('home.profile', {
-            url: '/profile',
-            templateUrl: 'templates/profile.html'
-        })
 
-        .state('home.dashboard', {
-            url: '/dashboard',
-            templateUrl: 'templates/dashboard.html'
-        })
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('about', {
@@ -78,58 +65,4 @@ app.controller('scotchController', function($scope) {
         }
     ];
     
-});
-
-app.controller('dashCtrl', function($scope){
-    $scope.tiles = [
-        {
-            'color': 'light-green',
-            'content': 'Azienda agricola',
-            'link': 'profile',
-            'image': 'path',
-            'valid': true
-        },
-        {
-            'color': 'yellow',
-            'content': 'Informazioni prodotto',
-            'image': 'path',
-            'valid': true
-        },
-        {
-            'color': 'orange',
-            'content': 'Dettagli prodotto',
-            'image': 'path',
-            'valid': true
-        },
-        {
-            'color': 'red',
-            'content': 'Valori nutrizionali',
-            'image': 'path',
-            'valid': true
-        },
-        {
-            'color': 'brown',
-            'content': 'Impatto CO2',
-            'image': 'path',
-            'valid': true
-        },
-        {
-            'color': 'purple',
-            'content': 'Ingredienti particolari',
-            'image': 'path',
-            'valid': true
-        },
-        {
-            'color': 'blue',
-            'content': 'Utilizzo acqua',
-            'image': 'path',
-            'valid': true
-        },
-        {
-            'color': 'dark-green',
-            'content': 'Ricette',
-            'image': 'path',
-            'valid': true
-    }
-];
 });

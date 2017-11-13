@@ -53,12 +53,24 @@
 	float: left;
 }
 
-.home-name-img {
+.mg-top-20{
 	margin-top: 20vh;
 }
 
 .home-name-sub {
-	@extend .header-base;
 	color: $blue-primary;
 	text-align: center;
+}
+
+.align-right{
+	text-align: right;
+}
+
+p {
+	font-family: $font-text;
+	color: $blue-primary;
+}
+
+h1, h2, h3, h4, h5 {
+	@extend .header-base;
 }

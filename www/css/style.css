@@ -39,7 +39,7 @@
   height: 100vh;
   width: 100vw; }
 
-.header-base, .custom-nav-links a, .home-name-sub {
+.header-base, .custom-nav-links a, h1, h2, h3, h4, h5 {
   font-family: Jaapokki, sans-serif;
   text-transform: uppercase; }
 
@@ -54,9 +54,16 @@
   color: #E66879;
   float: left; }
 
-.home-name-img {
+.mg-top-20 {
   margin-top: 20vh; }
 
 .home-name-sub {
   color: #204878;
   text-align: center; }
+
+.align-right {
+  text-align: right; }
+
+p {
+  font-family: Archer-Book, serif;
+  color: #204878; }

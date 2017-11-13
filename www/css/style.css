@@ -1,25 +1,62 @@
+@font-face {
+  font-family: Jaapokki;
+  src: url("../assets/fonts/Jaapokki-Regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: Archer-Bold;
+  src: url("../assets/fonts/Archer-Bold.otf") format("opentype"); }
+
+@font-face {
+  font-family: Archer-Book;
+  src: url("../assets/fonts/Archer-Book.otf") format("opentype"); }
+
+@font-face {
+  font-family: Archer-Medium;
+  src: url("../assets/fonts/Archer-Medium.otf") format("opentype"); }
+
+@font-face {
+  font-family: Archer-Semibold;
+  src: url("../assets/fonts/Archer-Semibold.otf") format("opentype"); }
+
 .bg-yellow-primary {
   background-color: #FCBA65; }
 
 .bg-blue-primary, .custom-nav {
   background-color: #204878; }
 
+.position-v-center, .custom-nav .custom-nav-links {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%); }
+
+.position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 .bg-cover {
   height: 100vh;
   width: 100vw; }
 
+.header-base, .custom-nav-links a, .home-name-sub {
+  font-family: Jaapokki, sans-serif;
+  text-transform: uppercase; }
+
 .full-width {
-  width: 100%; }
+  width: 100vw; }
 
 .custom-nav {
   height: 60px;
   position: relative; }
 
-.custom-nav .custom-nav-links {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%); }
-
 .custom-nav-links a {
   color: #E66879;
   float: left; }
+
+.home-name-img {
+  margin-top: 20vh; }
+
+.home-name-sub {
+  color: #204878;
+  text-align: center; }

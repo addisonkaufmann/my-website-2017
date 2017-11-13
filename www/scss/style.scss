@@ -1,13 +1,5 @@
-$yellow-primary: #FCBA65;
-$pink-primary: #E66879;
-$magenta-primary: #AD5372;
-$purple-primary: #614F7D;
-$blue-primary: #204878;
-
-$yellow-secondary: #F19170;
-$magenta-secondary: #875178;
-$purple-secondary: #424C7B;
-$blue-secondary: #13385E;
+@import "partials/colors";
+@import "partials/fonts";
 
 
 .bg-yellow-primary {
@@ -18,13 +10,31 @@ $blue-secondary: #13385E;
 	background-color: $blue-primary;
 }
 
+.position-v-center {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+
+.position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .bg-cover {
 	height: 100vh;
 	width: 100vw;
 }
 
+.header-base {
+	font-family: $font-header;
+	text-transform: uppercase;
+}
 .full-width {
-	width: 100%;
+	width: 100vw;
 }
 
 .custom-nav {
@@ -34,12 +44,21 @@ $blue-secondary: #13385E;
 }
 
 .custom-nav .custom-nav-links {
-	position: absolute;
-	top: 50%;
-	transform: translate(0, -50%);
+	@extend .position-v-center;
 }
 
 .custom-nav-links a {
+	@extend .header-base;
 	color: $pink-primary;
 	float: left;
+}
+
+.home-name-img {
+	margin-top: 20vh;
+}
+
+.home-name-sub {
+	@extend .header-base;
+	color: $blue-primary;
+	text-align: center;
 }

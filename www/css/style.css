@@ -24,10 +24,15 @@
 .bg-blue-primary, .custom-nav {
   background-color: #204878; }
 
-.position-v-center, .custom-nav .custom-nav-links {
+.position-v-center, .custom-nav .custom-nav-links, .arrow-left, .arrow-right {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%); }
+
+.position-h-center, .arrow-down {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0); }
 
 .position-center {
   position: absolute;
@@ -37,7 +42,8 @@
 
 .bg-cover {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  position: relative; }
 
 .header-base, .custom-nav-links a, h1, h2, h3, h4, h5 {
   font-family: Jaapokki, sans-serif;
@@ -66,4 +72,60 @@
 
 p {
   font-family: Archer-Book, serif;
-  color: #204878; }
+  color: #204878;
+  font-size: 12pt; }
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 0; }
+
+.edu-header-base, .edu-degree, .edu-header {
+  font-size: 22pt;
+  line-height: 22pt; }
+
+.edu-degree {
+  color: #F19170;
+  line-height: 30pt; }
+
+.edu-header {
+  color: #E66879; }
+
+.edu-major {
+  color: #614F7D;
+  font-size: 53pt;
+  line-height: 52pt; }
+
+.bold {
+  font-weight: bold; }
+
+.exp-title {
+  color: #614F7D;
+  font-size: 32pt; }
+
+.exp-company {
+  color: #E66879; }
+
+.exp-company a {
+  color: inherit;
+  text-decoration: none; }
+
+.exp-date {
+  color: #F19170; }
+
+.arrow-left {
+  left: 0;
+  margin-left: 10px;
+  color: #F19170;
+  font-size: 12pt; }
+
+.arrow-right {
+  right: 0;
+  margin-right: 10px;
+  color: #F19170;
+  font-size: 12pt; }
+
+.arrow-down {
+  bottom: 0;
+  margin-bottom: 10px;
+  color: #F19170;
+  text-align: center;
+  font-size: 12pt; }

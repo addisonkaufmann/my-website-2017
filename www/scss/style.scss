@@ -16,6 +16,12 @@
 	transform: translate(0, -50%);
 }
 
+.position-h-center {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
 
 .position-center {
 	position: absolute;
@@ -27,6 +33,7 @@
 .bg-cover {
 	height: 100vh;
 	width: 100vw;
+	position: relative;
 }
 
 .header-base {
@@ -69,8 +76,81 @@
 p {
 	font-family: $font-text;
 	color: $blue-primary;
+	font-size: 12pt;
 }
 
 h1, h2, h3, h4, h5 {
 	@extend .header-base;
+	margin-bottom: 0;
+}
+
+.edu-header-base {
+	font-size: 22pt;
+	line-height: 22pt;
+}
+
+.edu-degree{
+	@extend .edu-header-base;
+	color: $yellow-secondary;
+	line-height: 30pt;
+}
+
+.edu-header{
+	@extend .edu-header-base;
+	color: $pink-primary;
+}
+
+.edu-major{
+	color: $purple-primary;
+	font-size: 53pt;
+	line-height: 52pt;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.exp-title {
+	color: $purple-primary;
+	font-size: 32pt;
+}
+
+.exp-company {
+	color: $pink-primary;
+}
+
+.exp-company a {
+	color: inherit;
+	text-decoration: none;
+}
+
+
+.exp-date {
+	color: $yellow-secondary;
+}
+
+
+.arrow-left {
+	@extend .position-v-center;
+	left: 0;
+	margin-left: 10px;
+	color: $yellow-secondary;
+	font-size: 12pt;
+}
+
+.arrow-right {
+	@extend .position-v-center;
+	right: 0;
+	margin-right: 10px;
+	color: $yellow-secondary;
+	font-size: 12pt;
+}
+
+.arrow-down {
+	@extend .position-h-center;
+	bottom: 0;
+	margin-bottom: 10px;
+	color: $yellow-secondary;
+	text-align: center;
+	font-size: 12pt;
 }

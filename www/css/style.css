@@ -70,6 +70,9 @@
 .align-right {
   text-align: right; }
 
+.align-center {
+  text-align: center; }
+
 p {
   font-family: Archer-Book, serif;
   color: #204878;
@@ -129,3 +132,7 @@ h1, h2, h3, h4, h5 {
   color: #F19170;
   text-align: center;
   font-size: 12pt; }
+
+.contact-header {
+  text-align: center;
+  color: #875178; }

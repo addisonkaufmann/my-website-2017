@@ -73,6 +73,10 @@
 	text-align: right;
 }
 
+.align-center {
+	text-align: center;
+}
+
 p {
 	font-family: $font-text;
 	color: $blue-primary;
@@ -153,4 +157,9 @@ h1, h2, h3, h4, h5 {
 	color: $yellow-secondary;
 	text-align: center;
 	font-size: 12pt;
+}
+
+.contact-header {
+	text-align: center;
+	color: $magenta-secondary;
 }

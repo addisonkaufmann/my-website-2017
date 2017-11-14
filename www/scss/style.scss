@@ -6,8 +6,8 @@
 	background-color: $yellow-primary;
 }
 
-.bg-blue-primary {
-	background-color: $blue-primary;
+.bg-blue-secondary {
+	background-color: $blue-secondary;
 }
 
 .position-v-center {
@@ -45,7 +45,7 @@
 }
 
 .custom-nav {
-	@extend .bg-blue-primary;
+	@extend .bg-blue-secondary;
 	height: 60px;
 	position: relative;
 }
@@ -140,6 +140,10 @@ h1, h2, h3, h4, h5 {
 	margin-left: 10px;
 	color: $yellow-secondary;
 	font-size: 12pt;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 .arrow-right {
@@ -148,6 +152,10 @@ h1, h2, h3, h4, h5 {
 	margin-right: 10px;
 	color: $yellow-secondary;
 	font-size: 12pt;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 .arrow-down {
@@ -157,6 +165,10 @@ h1, h2, h3, h4, h5 {
 	color: $yellow-secondary;
 	text-align: center;
 	font-size: 12pt;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 .contact-header {

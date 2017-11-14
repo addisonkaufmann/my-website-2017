@@ -21,8 +21,8 @@
 .bg-yellow-primary {
   background-color: #FCBA65; }
 
-.bg-blue-primary, .custom-nav {
-  background-color: #204878; }
+.bg-blue-secondary, .custom-nav {
+  background-color: #13385E; }
 
 .position-v-center, .custom-nav .custom-nav-links, .arrow-left, .arrow-right {
   position: absolute;
@@ -119,12 +119,18 @@ h1, h2, h3, h4, h5 {
   margin-left: 10px;
   color: #F19170;
   font-size: 12pt; }
+  .arrow-left a {
+    text-decoration: none;
+    color: inherit; }
 
 .arrow-right {
   right: 0;
   margin-right: 10px;
   color: #F19170;
   font-size: 12pt; }
+  .arrow-right a {
+    text-decoration: none;
+    color: inherit; }
 
 .arrow-down {
   bottom: 0;
@@ -132,6 +138,9 @@ h1, h2, h3, h4, h5 {
   color: #F19170;
   text-align: center;
   font-size: 12pt; }
+  .arrow-down a {
+    text-decoration: none;
+    color: inherit; }
 
 .contact-header {
   text-align: center;

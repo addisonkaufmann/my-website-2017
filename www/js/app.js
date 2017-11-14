@@ -53,6 +53,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/home-contact.html'
         })
 
+        .state('portfolio', {
+            url: '/portfolio',
+            templateUrl: 'templates/portfolio.html'
+        })
+
 
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================

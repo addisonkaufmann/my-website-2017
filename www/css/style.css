@@ -143,3 +143,13 @@ a:hover {
 .contact-header {
   text-align: center;
   color: #875178; }
+
+.about-title {
+  color: #204878;
+  text-align: center; }
+
+.about-img {
+  margin: auto;
+  display: block;
+  max-width: 85%;
+  margin-bottom: 20px; }

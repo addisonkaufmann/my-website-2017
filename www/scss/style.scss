@@ -173,3 +173,15 @@ a:hover {
 	text-align: center;
 	color: $magenta-secondary;
 }
+
+.about-title {
+	color: $blue-primary;
+	text-align: center;
+}
+
+.about-img {
+	margin: auto;    
+    display: block; 
+    max-width: 85%; 
+    margin-bottom: 20px;
+}

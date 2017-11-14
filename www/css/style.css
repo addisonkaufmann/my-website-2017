@@ -29,7 +29,7 @@
   top: 50%;
   transform: translate(0, -50%); }
 
-.position-h-center, .arrow-down {
+.position-h-center {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0); }
@@ -122,23 +122,28 @@ a:hover {
   color: #F19170; }
 
 .arrow-left {
-  left: 0;
-  margin-left: 10px;
+  position: fixed;
+  left: 10px;
   color: #F19170;
   font-size: 12pt; }
 
 .arrow-right {
-  right: 0;
-  margin-right: 10px;
+  position: fixed;
+  right: 10px;
   color: #F19170;
   font-size: 12pt; }
 
 .arrow-down {
-  bottom: 0;
-  margin-bottom: 10px;
+  position: fixed;
   color: #F19170;
   text-align: center;
-  font-size: 12pt; }
+  font-size: 12pt;
+  z-index: 2;
+  bottom: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  left: 0;
+  right: 0; }
 
 .contact-header {
   text-align: center;

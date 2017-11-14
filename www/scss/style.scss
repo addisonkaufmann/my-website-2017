@@ -146,27 +146,32 @@ a:hover {
 
 .arrow-left {
 	@extend .position-v-center;
-	left: 0;
-	margin-left: 10px;
+	position: fixed;
+	left: 10px;
 	color: $yellow-secondary;
 	font-size: 12pt;
 }
 
 .arrow-right {
 	@extend .position-v-center;
-	right: 0;
-	margin-right: 10px;
+	position: fixed;
+	right: 10px;
 	color: $yellow-secondary;
 	font-size: 12pt;
 }
 
 .arrow-down {
-	@extend .position-h-center;
-	bottom: 0;
-	margin-bottom: 10px;
+	position: fixed;
 	color: $yellow-secondary;
 	text-align: center;
 	font-size: 12pt;
+
+	z-index: 2;
+	bottom: 10px;
+	overflow: hidden;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
 }
 
 .contact-header {
@@ -185,3 +190,6 @@ a:hover {
     max-width: 85%; 
     margin-bottom: 20px;
 }
+
+	
+

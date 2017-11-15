@@ -1,3 +1,57 @@
+.yellow-primary {
+  color: #FCBA65; }
+
+.yellow-secondary, .edu-degree, .exp-date, .arrow-left, .arrow-right, .arrow-down {
+  color: #F19170; }
+
+.pink-primary, .custom-nav-links a, .custom-nav-links a:hover, .edu-header, .exp-company {
+  color: #E66879; }
+
+.magenta-primary {
+  color: #AD5372; }
+
+.magenta-secondary, .contact-header {
+  color: #875178; }
+
+.purple-primary, .edu-major, .exp-title {
+  color: #614F7D; }
+
+.purple-secondary {
+  color: #424C7B; }
+
+.blue-primary, .home-name-sub, p, .about-title {
+  color: #204878; }
+
+.blue-secondary {
+  color: #13385E; }
+
+.bg-yellow-primary {
+  background-color: #FCBA65; }
+
+.bg-yellow-secondary {
+  background-color: #F19170; }
+
+.bg-pink-primary {
+  background-color: #E66879; }
+
+.bg-magenta-primary {
+  background-color: #AD5372; }
+
+.bg-magenta-secondary {
+  background-color: #875178; }
+
+.bg-purple-primary {
+  background-color: #614F7D; }
+
+.bg-purple-secondary {
+  background-color: #424C7B; }
+
+.bg-blue-primary {
+  background-color: #204878; }
+
+.bg-blue-secondary, .custom-nav {
+  background-color: #13385E; }
+
 @font-face {
   font-family: Jaapokki;
   src: url("../assets/fonts/Jaapokki-Regular.otf") format("opentype"); }
@@ -17,12 +71,6 @@
 @font-face {
   font-family: Archer-Semibold;
   src: url("../assets/fonts/Archer-Semibold.otf") format("opentype"); }
-
-.bg-yellow-primary {
-  background-color: #FCBA65; }
-
-.bg-blue-secondary, .custom-nav {
-  background-color: #13385E; }
 
 .position-v-center, .custom-nav .custom-nav-links, .arrow-left, .arrow-right {
   position: absolute;
@@ -57,17 +105,12 @@
   position: relative; }
 
 .custom-nav-links a {
-  color: #E66879;
   float: left; }
-
-.custom-nav-links a:hover {
-  color: #E66879; }
 
 .mg-top-20 {
   margin-top: 20vh; }
 
 .home-name-sub {
-  color: #204878;
   text-align: center; }
 
 .align-right {
@@ -78,7 +121,6 @@
 
 p {
   font-family: Archer-Book, serif;
-  color: #204878;
   font-size: 12pt; }
 
 h1, h2, h3, h4, h5 {
@@ -89,14 +131,9 @@ h1, h2, h3, h4, h5 {
   line-height: 22pt; }
 
 .edu-degree {
-  color: #F19170;
   line-height: 30pt; }
 
-.edu-header {
-  color: #E66879; }
-
 .edu-major {
-  color: #614F7D;
   font-size: 53pt;
   line-height: 52pt; }
 
@@ -104,11 +141,7 @@ h1, h2, h3, h4, h5 {
   font-weight: bold; }
 
 .exp-title {
-  color: #614F7D;
   font-size: 32pt; }
-
-.exp-company {
-  color: #E66879; }
 
 a {
   color: inherit;
@@ -118,24 +151,18 @@ a:hover {
   color: inherit;
   text-decoration: none; }
 
-.exp-date {
-  color: #F19170; }
-
 .arrow-left {
   position: fixed;
   left: 10px;
-  color: #F19170;
   font-size: 12pt; }
 
 .arrow-right {
   position: fixed;
   right: 10px;
-  color: #F19170;
   font-size: 12pt; }
 
 .arrow-down {
   position: fixed;
-  color: #F19170;
   text-align: center;
   font-size: 12pt;
   z-index: 2;
@@ -146,11 +173,9 @@ a:hover {
   right: 0; }
 
 .contact-header {
-  text-align: center;
-  color: #875178; }
+  text-align: center; }
 
 .about-title {
-  color: #204878;
   text-align: center; }
 
 .about-img {
@@ -158,3 +183,28 @@ a:hover {
   display: block;
   max-width: 85%;
   margin-bottom: 20px; }
+
+.skill-headers h5 {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px; }
+
+a img {
+  opacity: .9;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out; }
+
+a:hover img {
+  opacity: 1; }
+
+.gradient {
+  border-color: #875178;
+  /* For browsers that do not support gradients */
+  border-image: -webkit-linear-gradient(90deg, #E66879, #AD5372, #875178, #614F7D, #424C7B, #204878, #13385E);
+  border-image: -o-linear-gradient(90deg, #E66879, #AD5372, #875178, #614F7D, #424C7B, #204878, #13385E);
+  border-image: -moz-linear-gradient(90deg, #E66879, #AD5372, #875178, #614F7D, #424C7B, #204878, #13385E);
+  border-image: linear-gradient(90deg, #E66879, #AD5372, #875178, #614F7D, #424C7B, #204878, #13385E);
+  border-image-slice: 1; }

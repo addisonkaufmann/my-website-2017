@@ -2,14 +2,6 @@
 @import "partials/fonts";
 
 
-.bg-yellow-primary {
-	background-color: $yellow-primary;
-}
-
-.bg-blue-secondary {
-	background-color: $blue-secondary;
-}
-
 .position-v-center {
 	position: absolute;
 	top: 50%;
@@ -56,12 +48,12 @@
 
 .custom-nav-links a {
 	@extend .header-base;
-	color: $pink-primary;
+	@extend .pink-primary;
 	float: left;	
 }
 
 .custom-nav-links a:hover {
-	color: $pink-primary;	
+	@extend .pink-primary;	
 }
 
 .mg-top-20{
@@ -69,7 +61,7 @@
 }
 
 .home-name-sub {
-	color: $blue-primary;
+	@extend .blue-primary;
 	text-align: center;
 }
 
@@ -83,7 +75,7 @@
 
 p {
 	font-family: $font-text;
-	color: $blue-primary;
+	@extend .blue-primary;
 	font-size: 12pt;
 }
 
@@ -99,17 +91,17 @@ h1, h2, h3, h4, h5 {
 
 .edu-degree{
 	@extend .edu-header-base;
-	color: $yellow-secondary;
+	@extend .yellow-secondary;
 	line-height: 30pt;
 }
 
 .edu-header{
 	@extend .edu-header-base;
-	color: $pink-primary;
+	@extend .pink-primary;
 }
 
 .edu-major{
-	color: $purple-primary;
+	@extend .purple-primary;
 	font-size: 53pt;
 	line-height: 52pt;
 }
@@ -119,12 +111,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .exp-title {
-	color: $purple-primary;
+	@extend .purple-primary;
 	font-size: 32pt;
 }
 
 .exp-company {
-	color: $pink-primary;
+	@extend .pink-primary;
 }
 
 
@@ -140,7 +132,7 @@ a:hover {
 
 
 .exp-date {
-	color: $yellow-secondary;
+	@extend .yellow-secondary;
 }
 
 
@@ -148,7 +140,7 @@ a:hover {
 	@extend .position-v-center;
 	position: fixed;
 	left: 10px;
-	color: $yellow-secondary;
+	@extend .yellow-secondary;
 	font-size: 12pt;
 }
 
@@ -156,13 +148,13 @@ a:hover {
 	@extend .position-v-center;
 	position: fixed;
 	right: 10px;
-	color: $yellow-secondary;
+	@extend .yellow-secondary;
 	font-size: 12pt;
 }
 
 .arrow-down {
 	position: fixed;
-	color: $yellow-secondary;
+	@extend .yellow-secondary;
 	text-align: center;
 	font-size: 12pt;
 
@@ -176,11 +168,11 @@ a:hover {
 
 .contact-header {
 	text-align: center;
-	color: $magenta-secondary;
+	@extend .magenta-secondary;
 }
 
 .about-title {
-	color: $blue-primary;
+	@extend .blue-primary;
 	text-align: center;
 }
 
@@ -190,6 +182,35 @@ a:hover {
     max-width: 85%; 
     margin-bottom: 20px;
 }
+
+.skill-headers h5{
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 14px;
+}
+
+a img {
+	opacity: .9;
+	-webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+a:hover img {
+	opacity: 1;
+}
+
+.gradient {
+  border-color: $magenta-secondary; /* For browsers that do not support gradients */
+  border-image: -webkit-linear-gradient(90deg, $pink-primary, $magenta-primary, $magenta-secondary, $purple-primary, $purple-secondary, $blue-primary, $blue-secondary);
+  border-image: -o-linear-gradient(90deg, $pink-primary, $magenta-primary, $magenta-secondary, $purple-primary, $purple-secondary, $blue-primary, $blue-secondary);
+  border-image: -moz-linear-gradient(90deg, $pink-primary, $magenta-primary, $magenta-secondary, $purple-primary, $purple-secondary, $blue-primary, $blue-secondary);
+  border-image: linear-gradient(90deg, $pink-primary, $magenta-primary, $magenta-secondary, $purple-primary, $purple-secondary, $blue-primary, $blue-secondary);
+  border-image-slice: 1;
+}
+
 
 	
 

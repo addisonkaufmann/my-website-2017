@@ -8,3 +8,78 @@ $yellow-secondary: #F19170;
 $magenta-secondary: #875178;
 $purple-secondary: #424C7B;
 $blue-secondary: #13385E;
+
+.yellow-primary {
+	color: $yellow-primary;
+
+}
+
+.yellow-secondary {
+	color: $yellow-secondary;
+}
+
+.pink-primary {
+	color: $pink-primary;
+}
+
+.magenta-primary{
+	color: $magenta-primary;
+}
+
+.magenta-secondary {
+	color: $magenta-secondary;
+}
+
+.purple-primary {
+	color: $purple-primary;
+}
+
+.purple-secondary {
+	color: $purple-secondary;
+}
+
+.blue-primary {
+	color: $blue-primary;
+}
+
+.blue-secondary {
+	color: $blue-secondary;
+}
+
+
+.bg-yellow-primary {
+	background-color: $yellow-primary;
+
+}
+
+.bg-yellow-secondary {
+	background-color: $yellow-secondary;
+}
+
+.bg-pink-primary {
+	background-color: $pink-primary;
+}
+
+.bg-magenta-primary{
+	background-color: $magenta-primary;
+}
+
+.bg-magenta-secondary {
+	background-color: $magenta-secondary;
+}
+
+.bg-purple-primary {
+	background-color: $purple-primary;
+}
+
+.bg-purple-secondary {
+	background-color: $purple-secondary;
+}
+
+.bg-blue-primary {
+	background-color: $blue-primary;
+}
+
+.bg-blue-secondary {
+	background-color: $blue-secondary;
+}

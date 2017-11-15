@@ -211,6 +211,13 @@ a:hover img {
   border-image-slice: 1;
 }
 
+.gradient-line {
+	@extend .gradient;
+	border-width: 5px; 
+	margin-left: 10px; 
+	margin-right: 10px;
+}
+
 
 	
 

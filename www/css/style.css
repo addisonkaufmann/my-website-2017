@@ -200,7 +200,7 @@ a img {
 a:hover img {
   opacity: 1; }
 
-.gradient {
+.gradient, .gradient-line {
   border-color: #875178;
   /* For browsers that do not support gradients */
   border-image: -webkit-linear-gradient(90deg, #E66879, #AD5372, #875178, #614F7D, #424C7B, #204878, #13385E);
@@ -208,3 +208,8 @@ a:hover img {
   border-image: -moz-linear-gradient(90deg, #E66879, #AD5372, #875178, #614F7D, #424C7B, #204878, #13385E);
   border-image: linear-gradient(90deg, #E66879, #AD5372, #875178, #614F7D, #424C7B, #204878, #13385E);
   border-image-slice: 1; }
+
+.gradient-line {
+  border-width: 5px;
+  margin-left: 10px;
+  margin-right: 10px; }

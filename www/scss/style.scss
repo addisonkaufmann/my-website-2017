@@ -57,7 +57,7 @@
 }
 
 .mg-top-20{
-	margin-top: 20vh;
+	margin-top: 25vh;
 }
 
 .home-name-sub {
@@ -216,6 +216,11 @@ a:hover img {
 	border-width: 5px; 
 	margin-left: 10px; 
 	margin-right: 10px;
+}
+
+body {
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 

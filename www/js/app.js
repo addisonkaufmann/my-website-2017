@@ -10,19 +10,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         .state('home', {
             url: '/home',
-            templateUrl: 'templates/home.html'
+            templateUrl: 'templates/home.html',
+            controller: 'homeCtrl'
         })
         
-        // nested list with custom controller
-        // .state('home.list', {
-        //     url: '/list',
-        //     templateUrl: 'templates/partial-home-list.html',
-        //     controller: function($scope) {
-        //         $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-        //     }
-        // })
-        
-        // nested list with just some random string data
+        .state('home.name',{
+            url: '/name',
+            templateUrl: 'templates/home-name.html'
+        })
+
         .state('home.about', {
             url: '/about',
             templateUrl: 'templates/home-about.html'
@@ -38,14 +34,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/home-exp.html'
         })
 
-        .state('home.name',{
-            url: '/name',
-            templateUrl: 'templates/home-name.html'
-        })
-
-        .state('home.skills',{
-            url: '/skills',
-            templateUrl: 'templates/home-skills.html'
+        .state('home.skill',{
+            url: '/skill',
+            templateUrl: 'templates/home-skill.html'
         })
 
         .state('home.contact',{
@@ -76,23 +67,36 @@ app.config(function($stateProvider, $urlRouterProvider) {
         
 });
 
-app.controller('scotchController', function($scope) {
-    
-    $scope.message = 'test';
-   
-    $scope.scotches = [
-        {
-            name: 'Macallan 12',
-            price: 50
-        },
-        {
-            name: 'Chivas Regal Royal Salute',
-            price: 10000
-        },
-        {
-            name: 'Glenfiddich 1937',
-            price: 20000
+
+app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
+    $scope._timeout  = null;
+    var pages = ['home.name', 'home.about', 'home.edu', 'home.exp', 'home.skill', 'home.contact'];
+    var i = 0;
+    $scope.down = false;
+    angular.element($window).bind("wheel", function(e) {
+        if($scope._timeout){ //if there is already a timeout in process cancel it
+            $timeout.cancel($scope._timeout);
         }
-    ];
-    
+        $scope._timeout = $timeout(function(){
+            $scope._timeout = null;
+
+            var i = pages.indexOf($state.current.name);
+
+            if (e.wheelDeltaY > 0 && i > 0){
+                i--;
+                $scope.down = true;
+                console.log('scrolled up: going to pages['+i+']' + pages[i] + ' ' + $scope.transition);
+                $state.go(pages[i]);
+            } else if (e.wheelDeltaY < 0 && i < pages.length-1){
+                i++;
+                $scope.down = false;
+                console.log('scrolled down: going to pages['+i+'] ' + pages[i] + ' ' + $scope.transition);
+                $state.go(pages[i]);
+            } else if (e.wheelDeltaX < 0) {
+                console.log('go to portfolio');
+                $state.go('portfolio');
+            }  
+        },250);
+    });
 });
+

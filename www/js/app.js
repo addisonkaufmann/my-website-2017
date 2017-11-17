@@ -49,6 +49,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/portfolio.html'
         })
 
+        .state('projects', {
+            url: '/projects',
+            templateUrl: 'templates/projects.html'
+        })
 
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
@@ -69,6 +73,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 
 app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
+    console.log("hey");
     $scope._timeout  = null;
     var pages = ['home.name', 'home.about', 'home.edu', 'home.exp', 'home.skill', 'home.contact'];
     $scope.length = pages.length;
@@ -78,31 +83,44 @@ app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
 
     $scope.down = false;
     angular.element($window).bind("wheel", function(e) {
-        $scope.index = pages.indexOf($state.current.name);
+        if (pages.indexOf($state.current.name) != -1){
+            $scope.index = pages.indexOf($state.current.name);
 
-        if($scope._timeout){ //if there is already a timeout in process cancel it
-            $timeout.cancel($scope._timeout);
+            if($scope._timeout){
+                $timeout.cancel($scope._timeout);
+            }
+            $scope._timeout = $timeout(function(){
+                $scope._timeout = null;
+
+                if (e.wheelDeltaY > 0 && $scope.index > 0){
+                    $scope.goUp();
+                } else if (e.wheelDeltaY < 0 && $scope.index < pages.length-1){
+                    $scope.goDown(); 
+                } else if (e.wheelDeltaX < 0) {
+                    console.log('go to portfolio ' + e.wheelDeltaX);
+                    $state.go('portfolio');
+                } else if (e.wheelDeltaX > 0){
+                    console.log('go to projects ' + e.wheelDeltaX);
+                    $state.go('projects');
+                };
+            },250);
         }
-        $scope._timeout = $timeout(function(){
-            $scope._timeout = null;
-
-            if (e.wheelDeltaY > 0 && $scope.index > 0){
-                $scope.index--;
-                $scope.down = true;
-                console.log('scrolled up: going to pages['+$scope.index+']' + pages[$scope.index] + ' ' + $scope.transition);
-                $state.go(pages[$scope.index]);
-            } else if (e.wheelDeltaY < 0 && $scope.index < pages.length-1){
-                $scope.index++;
-                $scope.down = false;
-                console.log('scrolled down: going to pages['+$scope.index+'] ' + pages[$scope.index] + ' ' + $scope.transition);
-                $state.go(pages[$scope.index]);
-            } else if (e.wheelDeltaX < 0) {
-                console.log('go to portfolio');
-                $state.go('portfolio');
-            }  
-        },250);
     });
 
-  
+    $scope.goUp = function(){
+        $scope.index--;
+        $scope.down = true;
+        console.log('scrolled up: going to pages['+$scope.index+']' + pages[$scope.index] + ' ' + $scope.transition);
+        $state.go(pages[$scope.index]);
+    };
+
+    $scope.goDown = function(){
+        $scope.index++;
+        $scope.down = false;
+        console.log('scrolled down: going to pages['+$scope.index+'] ' + pages[$scope.index] + ' ' + $scope.transition);
+        $state.go(pages[$scope.index]);
+    };
+
+
 });
 

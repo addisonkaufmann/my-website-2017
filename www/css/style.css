@@ -1,7 +1,7 @@
 .yellow-primary {
   color: #FCBA65; }
 
-.yellow-secondary, .edu-degree, .exp-date, .arrow-left, .arrow-right, .arrow-down, .arrow-up {
+.yellow-secondary, .edu-degree, .exp-date, .arrow-left, .arrow-right, .arrow-down, .arrow-up, .contact-header {
   color: #F19170; }
 
 .pink-primary, .custom-nav-links a, .custom-nav-links a:hover, .edu-header, .exp-company, .exp-arrow {
@@ -10,13 +10,13 @@
 .magenta-primary {
   color: #AD5372; }
 
-.magenta-secondary, .contact-header {
+.magenta-secondary {
   color: #875178; }
 
 .purple-primary, .edu-major, .exp-title {
   color: #614F7D; }
 
-.purple-secondary {
+.purple-secondary, .contact-icon {
   color: #424C7B; }
 
 .blue-primary, .home-name-sub, p, .about-title {
@@ -80,13 +80,19 @@
 .position-h-center {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0); }
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0); }
 
 .position-center {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%); }
 
 .bg-cover {
   height: 100vh;
@@ -218,6 +224,17 @@ a img {
 a:hover img {
   opacity: 1; }
 
+a .fa {
+  opacity: .9;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out; }
+
+a:hover .fa {
+  opacity: 1; }
+
 .gradient, .gradient-line {
   border-color: #875178;
   /* For browsers that do not support gradients */
@@ -252,3 +269,6 @@ body {
 
 .full-opacity {
   opacity: 1; }
+
+.contact-icon {
+  font-size: 50px; }

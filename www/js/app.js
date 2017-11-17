@@ -71,32 +71,38 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
     $scope._timeout  = null;
     var pages = ['home.name', 'home.about', 'home.edu', 'home.exp', 'home.skill', 'home.contact'];
-    var i = 0;
+    $scope.length = pages.length;
+
+    $scope.index = pages.indexOf($state.current.name);
+    console.log($scope.index + ' ' + $scope.length);
+
     $scope.down = false;
     angular.element($window).bind("wheel", function(e) {
+        $scope.index = pages.indexOf($state.current.name);
+
         if($scope._timeout){ //if there is already a timeout in process cancel it
             $timeout.cancel($scope._timeout);
         }
         $scope._timeout = $timeout(function(){
             $scope._timeout = null;
 
-            var i = pages.indexOf($state.current.name);
-
-            if (e.wheelDeltaY > 0 && i > 0){
-                i--;
+            if (e.wheelDeltaY > 0 && $scope.index > 0){
+                $scope.index--;
                 $scope.down = true;
-                console.log('scrolled up: going to pages['+i+']' + pages[i] + ' ' + $scope.transition);
-                $state.go(pages[i]);
-            } else if (e.wheelDeltaY < 0 && i < pages.length-1){
-                i++;
+                console.log('scrolled up: going to pages['+$scope.index+']' + pages[$scope.index] + ' ' + $scope.transition);
+                $state.go(pages[$scope.index]);
+            } else if (e.wheelDeltaY < 0 && $scope.index < pages.length-1){
+                $scope.index++;
                 $scope.down = false;
-                console.log('scrolled down: going to pages['+i+'] ' + pages[i] + ' ' + $scope.transition);
-                $state.go(pages[i]);
+                console.log('scrolled down: going to pages['+$scope.index+'] ' + pages[$scope.index] + ' ' + $scope.transition);
+                $state.go(pages[$scope.index]);
             } else if (e.wheelDeltaX < 0) {
                 console.log('go to portfolio');
                 $state.go('portfolio');
             }  
         },250);
     });
+
+  
 });
 

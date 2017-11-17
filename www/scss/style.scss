@@ -169,6 +169,20 @@ a:hover {
 	right: 0;
 }
 
+.arrow-up {
+	position: fixed;
+	@extend .yellow-secondary;
+	text-align: center;
+	font-size: 12pt;
+
+	z-index: 2;
+	top: 10px;
+	overflow: hidden;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+
 .contact-header {
 	text-align: center;
 	@extend .magenta-secondary;

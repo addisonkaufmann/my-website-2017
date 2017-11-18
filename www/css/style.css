@@ -96,8 +96,7 @@
 
 .bg-cover {
   height: 100vh;
-  width: 100vw;
-  position: relative; }
+  width: 100vw; }
 
 .header-base, .custom-nav-links a, h1, h2, h3, h4, h5 {
   font-family: Jaapokki, sans-serif;
@@ -249,9 +248,11 @@ a:hover .fa {
   margin-left: 10px;
   margin-right: 10px; }
 
+html,
 body {
-  overflow-y: hidden;
-  overflow-x: hidden; }
+  overflow: hidden;
+  position: relative;
+  height: 100%; }
 
 .exp-dot {
   height: 10px;

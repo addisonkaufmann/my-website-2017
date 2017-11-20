@@ -19,15 +19,12 @@
 
 	</div>
 	<div class="col-8 bg-cover bg-pink-primary animated fadeInDown no-padding">
-		<img ng-show="step==0" src="assets/MockupFrontandCd.png"  style="object-fit: cover; max-height: 100vh;"/>
-		<img ng-show="step==1" src="assets/BruceMauMockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
-		<img ng-show="step==2" src="assets/SimpleMockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
-		<img ng-show="step==3" src="assets/TripleMockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
-		<img ng-show="step==4" src="assets/sepal-mockup.jpg"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
-		<img ng-show="step==5" src="assets/ad_mockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
-
-
-
+		<img ng-show="step==0" src="assets/MockupFrontandCd.png" class="animated" ng-class="{'fadeIn': step==0, 'fadeOut': step!=0 }" style="object-fit: cover; max-height: 100vh;"/>
+		<img ng-show="step==1" src="assets/BruceMauMockup.png" class="animated" ng-class="{'fadeIn': step==1, 'fadeOut': step!=1 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==2" src="assets/SimpleMockup.png" class="animated" ng-class="{'fadeIn': step==2, 'fadeOut': step!=2 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==3" src="assets/TripleMockup.png" class="animated" ng-class="{'fadeIn': step==3, 'fadeOut': step!=3 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==4" src="assets/sepal-mockup.jpg" class="animated" ng-class="{'fadeIn': step==4, 'fadeOut': step!=4 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==5" src="assets/ad_mockup.png" class="animated" ng-class="{'fadeIn': step==5, 'fadeOut': step!=5 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
 	</div>
 	
 </div>

@@ -1,9 +1,33 @@
-<div class="bg-blue-secondary bg-cover animated fadeInRight">
-	<h4 style="color: white;">Portfolio</h4>
-	<h3 class="arrow-left animated fadeInRight d-none d-sm-block d-md-block d-lg-block d-xl-block">
-		<a href="#home/name">
-			<i class="fa fa-chevron-left" aria-hidden="true"></i>
-			Back
-		</a>
-	</h3>
+<div class="row" ng-init="step = -1;">
+	<div class="col-4 bg-cover bg-blue-secondary animated fadeInRight">
+		<h1 class="purple-secondary" style="font-size: 70px;">Design<br/> Portfolio</h1>
+		<h3 class="arrow-left animated fadeInRight d-none d-sm-block d-md-block d-lg-block d-xl-block">
+			<a href="#home/name">
+				<i class="fa fa-chevron-left" aria-hidden="true"></i>
+				Back
+			</a>
+		</h3>
+
+		<div class="position-v-center" style="right: 15px;">
+			<h4 class="align-right pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=0;">Red Threads</h4>
+			<h4 class="align-right pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=1;">Desire &amp; Innocence</h4>
+			<h4 class="align-right pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=2;">Beautiful &amp; Strange</h4>
+			<h4 class="align-right pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=3;">Wine For Sluts</h4>
+			<h4 class="align-right pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=4;">The Knotted Sepal</h4>
+			<h4 class="align-right pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=5;">Living Museum</h4>
+		</div>
+
+	</div>
+	<div class="col-8 bg-cover bg-pink-primary animated fadeInDown no-padding">
+		<img ng-show="step==0" src="assets/MockupFrontandCd.png"  style="object-fit: cover; max-height: 100vh;"/>
+		<img ng-show="step==1" src="assets/BruceMauMockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==2" src="assets/SimpleMockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==3" src="assets/TripleMockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==4" src="assets/sepal-mockup.jpg"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==5" src="assets/ad_mockup.png"  style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+
+
+
+	</div>
+	
 </div>

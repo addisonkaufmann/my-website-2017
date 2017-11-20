@@ -46,12 +46,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         .state('portfolio', {
             url: '/portfolio',
-            templateUrl: 'templates/portfolio.html'
+            templateUrl: 'templates/portfolio.html',
+            controller: 'portCtrl'
         })
 
         .state('projects', {
             url: '/projects',
-            templateUrl: 'templates/projects.html'
+            templateUrl: 'templates/projects.html',
+            controller: 'projCtrl'
         })
 
         
@@ -73,14 +75,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 
 app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
-    console.log("hey");
-    $scope._timeout  = null;
     var pages = ['home.name', 'home.about', 'home.edu', 'home.exp', 'home.skill', 'home.contact'];
+    $scope._timeout  = null;
     $scope.length = pages.length;
-
     $scope.index = pages.indexOf($state.current.name);
-    console.log($scope.index + ' ' + $scope.length);
-
     $scope.down = false;
     angular.element($window).bind("wheel", function(e) {
         if (pages.indexOf($state.current.name) != -1){
@@ -120,7 +118,42 @@ app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
         console.log('scrolled down: going to pages['+$scope.index+'] ' + pages[$scope.index] + ' ' + $scope.transition);
         $state.go(pages[$scope.index]);
     };
+});
 
 
+app.controller('portCtrl', function($scope, $window, $state, $timeout) {
+    $scope._timeout  = null;
+
+    angular.element($window).bind("wheel", function(e) {
+        if($scope._timeout){
+            $timeout.cancel($scope._timeout);
+        }
+        $scope._timeout = $timeout(function(){
+            $scope._timeout = null;
+
+            if (e.wheelDeltaX > 0){
+                console.log('go to home ' + e.wheelDeltaX);
+                $state.go('home.name');
+            };
+        },250);
+    });
+});
+
+app.controller('projCtrl', function($scope, $window, $state, $timeout) {
+    $scope._timeout  = null;
+
+    angular.element($window).bind("wheel", function(e) {
+        if($scope._timeout){
+            $timeout.cancel($scope._timeout);
+        }
+        $scope._timeout = $timeout(function(){
+            $scope._timeout = null;
+
+            if (e.wheelDeltaX < 0) {
+                console.log('go to home ' + e.wheelDeltaX);
+                $state.go('home.name');
+            }
+        },250);
+    });
 });
 

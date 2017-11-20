@@ -273,3 +273,6 @@ body {
 
 .contact-icon {
   font-size: 50px; }
+
+.no-padding {
+  padding: 0; }

@@ -1,4 +1,4 @@
-<div class="bg-blue-secondary bg-cover animated fadeInLeft">
+<!-- <div class="bg-blue-secondary bg-cover animated fadeInLeft">
 	<h4 style="color: white;">Projects</h4>
 	<h3 class="arrow-right animated fadeInLeft d-none d-sm-block d-md-block d-lg-block d-xl-block">
 		<a href="#home/name">
@@ -6,4 +6,33 @@
 			<i class="fa fa-chevron-right" aria-hidden="true"></i>
 		</a>
 	</h3>
+</div> -->
+
+<div class="row" ng-init="step = -1;">
+	<div class="col-8 bg-cover bg-pink-primary animated fadeInLeft no-padding">
+		<img ng-show="step==0" src="assets/MockupFrontandCd.png" class="animated" ng-class="{'fadeIn': step==0, 'fadeOut': step!=0 }" style="object-fit: cover; max-height: 100vh;"/>
+		<img ng-show="step==1" src="assets/BruceMauMockup.png" class="animated" ng-class="{'fadeIn': step==1, 'fadeOut': step!=1 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==2" src="assets/SimpleMockup.png" class="animated" ng-class="{'fadeIn': step==2, 'fadeOut': step!=2 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==3" src="assets/TripleMockup.png" class="animated" ng-class="{'fadeIn': step==3, 'fadeOut': step!=3 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==4" src="assets/sepal-mockup.jpg" class="animated" ng-class="{'fadeIn': step==4, 'fadeOut': step!=4 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+		<img ng-show="step==5" src="assets/ad_mockup.png" class="animated" ng-class="{'fadeIn': step==5, 'fadeOut': step!=5 }" style="object-fit: cover; max-height: 100vh; min-width: 100%;"/>
+	</div>
+	<div class="col-4 bg-cover bg-blue-secondary animated fadeInLeft">
+		<h1 class="purple-secondary align-right" style="font-size: 70px;">Software<br/> Projects</h1>
+		
+		<div class="position-v-center" style="left: 15px;">
+			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=0;">Gardenroots</h4>
+			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=1;">Follower</h4>
+			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=2;">TakeCharge</h4>
+			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=3;">Ripple Effect</h4>
+		</div>
+		<h3 class="arrow-right animated fadeInRight d-none d-sm-block d-md-block d-lg-block d-xl-block">
+			<a href="#home/name">
+				Back
+				<i class="fa fa-chevron-right" aria-hidden="true"></i>
+			</a>
+		</h3>
+
+	</div>
+	
 </div>

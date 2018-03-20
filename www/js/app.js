@@ -51,7 +51,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
 
         .state('detail', {
-            url: '/portfolio/detail/:id',
+            url: '/:type/detail/:id',
             templateUrl: 'templates/portfolio-detail.html',
             controller: 'portDetailCtrl'
         })
@@ -153,7 +153,7 @@ app.controller('portCtrl', function($scope, $window, $state, $timeout, $statePar
         console.log("going to " + $scope.items[index].name);
         $scope.clicked=true;
         $timeout(function () {
-            $state.go('detail', {id: index});
+            $state.go('detail', {id: index, type: 'portfolio'});
         }, 600);
 
     };
@@ -174,6 +174,7 @@ app.controller('portCtrl', function($scope, $window, $state, $timeout, $statePar
 });
 
 app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $stateParams){
+    
     $scope.items = [
         {name: "Higher Ground", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/116eb963276571.5aac2b052fbed.png"},
         {name: "Funk Water", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e4209c63188451.5aa8a9cee57f6.jpg"},
@@ -185,19 +186,20 @@ app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $st
     ];
 
     var id = parseInt($stateParams.id); 
+    var type = $stateParams.type;
     $scope.id = id;
     $scope.name = $scope.items[id].name;
 
     $scope.close = function(){
-        $state.go('portfolio');
+        $state.go(type);
     };
 
     $scope.goLeft = function(){
-        $state.go('detail', {id: id-1})
+        $state.go('detail', {id: id-1, type: type})
     };
 
     $scope.goRight = function(){
-        $state.go('detail', {id: id+1})
+        $state.go('detail', {id: id+1, type: type})
     };
 
 });
@@ -223,7 +225,7 @@ app.controller('projCtrl', function($scope, $window, $state, $timeout) {
         console.log("going to " + $scope.items[index].name);
         $scope.clicked=true;
         $timeout(function () {
-            $state.go('detail', {id: index});
+            $state.go('detail', {id: index, type: 'projects'});
         }, 600);
     };
 

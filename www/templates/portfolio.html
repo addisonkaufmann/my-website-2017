@@ -17,8 +17,6 @@
 
 	<div class="col-8 d-none d-md-block bg-cover bg-pink-primary animated fadeInRight no-padding" style="z-index: 1;" ng-class="{'fadeOutRight': clicked}">
 		<img ng-repeat="item in items" ng-show="step=={{$index}}" ng-src="{{item.src}}" class="animated portfolio-img" ng-class="{'fadeIn': step==$index, 'fadeOut': step!=$index}"/>
-		<div ui-view>
-		</div>
 	</div>	
 
 </div>

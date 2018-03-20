@@ -8,24 +8,15 @@
 	</h3>
 </div> -->
 
-<div class="row" ng-init="step = -1;">
-	<div class="col-8 bg-cover animated fadeInLeft no-padding" style="position: relative;" ng-class="{'bg-pink-primary': step < 0, 'bg-white': step == 3, 'bg-takecharge': step == 2, 'bg-follower': step == 1}">
-<!-- 		<img ng-show="step==0" src="assets/MockupFrontandCd.png" class="animated" ng-class="{'fadeIn': step==0, 'fadeOut': step!=0 }" style="object-fit: cover; max-height: 100vh;"/> -->
-		<img ng-show="step==1" src="assets/Follower.png" class="animated project-img" ng-class="{'fadeIn': step==1, 'fadeOut': step!=1 }" />
-		<img ng-show="step==2" src="assets/TakeCharge.png" class="animated project-img" ng-class="{'fadeIn': step==2, 'fadeOut': step!=2 }" style=""/>
-		<img ng-show="step==3" src="assets/RippleEffect.png" class="animated project-img" ng-class="{'fadeIn': step==3, 'fadeOut': step!=3 }" style=""/>
-
-
+<div class="row bg-blue-secondary">
+	<div class="col-8 d-none d-md-block bg-cover animated fadeInLeft no-padding bg-pink-primary" style="position: relative;" ng-style="items[step].style" ng-class="{'fadeOutLeft': clicked}">
+		<img ng-repeat="item in items" ng-show="step=={{$index}}" ng-src="{{item.src}}" class="animated project-img" ng-class="{'fadeIn': step==$index, 'fadeOut': step!=$index}"/>
 	</div>
-	<div class="col-4 bg-cover bg-blue-secondary animated fadeInLeft">
+	<div class="col-12 col-md-4 bg-cover bg-blue-secondary animated fadeInLeft" ng-class="{'fadeOutRight': clicked}">
 		<h1 class="purple-secondary align-right" style="font-size: 70px;">Software<br/> Projects</h1>
 		
-		<div class="position-v-center" style="left: 15px;">
-<!-- 			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=0;">Gardenroots</h4>
- -->		
- 			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=1;">Follower</h4>
-			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=2;">TakeCharge</h4>
-			<h4 class="align-left pink-primary" style="cursor: pointer; line-height: 40px;" ng-mouseover="step=3;">Ripple Effect</h4>
+		<div class="position-v-center" style="left: 15px;">	
+			<h4 ng-repeat="item in items" class="align-left pink-primary portfolio-item-name" ng-mouseover="setStep($index)" ng-click="goTo($index)">{{item.name}}</h4>	
 		</div>
 		<h3 class="arrow-right animated fadeInRight d-none d-sm-block d-md-block d-lg-block d-xl-block">
 			<a href="#home/name">

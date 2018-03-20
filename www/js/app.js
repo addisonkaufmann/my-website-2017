@@ -204,6 +204,28 @@ app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $st
 
 app.controller('projCtrl', function($scope, $window, $state, $timeout) {
     $scope._timeout  = null;
+    $scope.step = -1;
+    $scope.clicked = false;
+
+
+    $scope.items = [
+        {name: "Ripple Effect", src: "assets/RippleEffect.png", style: {'background-color': 'white'}},
+        {name: "Follower", src: "assets/Follower.png", style: {'background-color': '#f2f2f2'}},
+        {name: "TakeCharge", src: "assets/TakeCharge.png", style: {'background-color': '#fffaf8'}}
+    ];
+
+    $scope.setStep = function(index){
+        $scope.step = index;
+        console.log('set step to ' + $scope.step);
+    };
+
+    $scope.goTo = function(index){
+        console.log("going to " + $scope.items[index].name);
+        $scope.clicked=true;
+        $timeout(function () {
+            $state.go('detail', {id: index});
+        }, 600);
+    };
 
     angular.element($window).bind("wheel", function(e) {
         if($scope._timeout){

@@ -3,16 +3,6 @@
 	<i style="cursor: pointer; font-size: 30px; float: left; margin-left: 15px;" class="fa fa-times blue-primary portfolio-detail-mg d-none d-sm-block" ng-click="close()" aria-hidden="true"></i>
 
 
-		
-	<!-- <h1 class="blue-primary animated fadeInUp" style="float: left; margin: 15px;">
-		<i style="cursor: pointer; font-size: 30px;" class="fa fa-times" ng-click="close()" aria-hidden="true"></i>
-	</h1>
-	<h1 class="blue-primary animated fadeInUp portfolio-detail-title align-center" style="margin: 0 auto; width: 100%; margin-top: 15px; margin-bottom: 15px;">
-		<i style="cursor: pointer; font-size: 30px;" ng-show="id!==0" class="fa fa-chevron-left" ng-click="goLeft()" aria-hidden="true"></i>
-		{{'  ' + name}}
-		<i style="cursor: pointer; font-size: 30px;" ng-if="id!==items.length" class="fa fa-chevron-right" ng-click="goRight()" aria-hidden="true"></i>
-	</h1> -->
-
 	<div class="container">
 		<div class="row portfolio-detail-mg  align-items-center">
 				<div class="col-1 offset-1 offset-sm-1 offset-lg-2 ">
@@ -22,7 +12,7 @@
 				</div>
  				<div class="col-8 col-sm-8 col-lg-6">
 					<h1 class="align-center blue-primary">				
-					{{'  ' + name}}
+					{{name}}
 					</h1>
 				</div>
 				<div class="col-1">

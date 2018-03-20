@@ -88,14 +88,20 @@
 .detail-margin {
   margin-bottom: 30px; }
 
-.bg-takecharge {
-  background-color: #fffaf8; }
+.videoWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%; }
 
-.bg-black {
-  background-color: black; }
-
-.bg-follower {
-  background-color: #f2f2f2; }
+.oneVideoWrapper iframe {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 .bg-white {
   background-color: white; }
@@ -129,7 +135,7 @@
   height: 100vh;
   width: 100vw; }
 
-.header-base, .custom-nav-links a, h1, h2, h3, h4, h5 {
+.header-base, .custom-nav-links a, h1, h2, h3, h4, h5, .view-button {
   font-family: Jaapokki, sans-serif;
   text-transform: uppercase; }
 

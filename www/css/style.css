@@ -85,8 +85,14 @@
   -moz-transform: translate(-50%, 0);
   -o-transform: translate(-50%, 0); }
 
+.detail-margin {
+  margin-bottom: 30px; }
+
 .bg-takecharge {
   background-color: #fffaf8; }
+
+.bg-black {
+  background-color: black; }
 
 .bg-follower {
   background-color: #f2f2f2; }

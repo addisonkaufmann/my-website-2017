@@ -1,6 +1,6 @@
 
 <div class="row bg-blue-secondary ">
-	<div class="col-4 bg-cover bg-blue-secondary animated fadeInRight" style="z-index: 2;" ng-class="{'fadeOutLeft': clicked}">
+	<div class="col-12 col-sm-4 bg-cover bg-blue-secondary animated fadeInRight" style="z-index: 2;" ng-class="{'fadeOutLeft': clicked}">
 		<h1 class="purple-secondary" style="font-size: 70px;" >Design<br/> Portfolio</h1>
 		<h3 class="arrow-left animated fadeInRight d-none d-sm-block d-md-block d-lg-block d-xl-block">
 			<a href="#home/name">
@@ -13,7 +13,7 @@
 		</div>
 	</div>
 
-	<div class="col-8 bg-cover bg-pink-primary animated fadeInRight no-padding" style="z-index: 1;" ng-class="{'fadeOutRight': clicked}">
+	<div class="col-8 d-none d-md-block bg-cover bg-pink-primary animated fadeInRight no-padding" style="z-index: 1;" ng-class="{'fadeOutRight': clicked}">
 		<img ng-repeat="item in items" ng-show="step=={{$index}}" ng-src="{{item.src}}" class="animated portfolio-img" ng-class="{'fadeIn': step==$index, 'fadeOut': step!=$index}"/>
 		<div ui-view>
 		</div>

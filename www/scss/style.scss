@@ -44,6 +44,24 @@
 	max-width: 60%;
 }
 
+.portfolio-img{
+	@extend .position-h-center;
+	object-fit: cover; 
+	max-height: 100vh;
+	min-width: 100%;
+}
+
+.portfolio-item-name {
+	cursor: pointer; 
+	line-height: 40px;
+	opacity: 0.6;
+	
+}
+
+.portfolio-item-name:hover {
+	opacity: 1;
+}
+
 .bg-cover {
 	height: 100vh;
 	width: 100vw;

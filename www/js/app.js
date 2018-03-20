@@ -47,7 +47,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('portfolio', {
             url: '/portfolio',
             templateUrl: 'templates/portfolio.html',
-            controller: 'portCtrl'
+            controller: 'portCtrl',
+        })
+
+        .state('detail', {
+            url: '/portfolio/detail/:id',
+            templateUrl: 'templates/portfolio-detail.html',
+            controller: 'portDetailCtrl'
         })
 
         .state('projects', {
@@ -55,6 +61,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/projects.html',
             controller: 'projCtrl'
         })
+
 
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
@@ -121,8 +128,36 @@ app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
 });
 
 
-app.controller('portCtrl', function($scope, $window, $state, $timeout) {
+app.controller('portCtrl', function($scope, $window, $state, $timeout, $stateParams) {
     $scope._timeout  = null;
+    console.log('port');
+    $scope.step = -1;
+    $scope.clicked = false;
+
+
+    $scope.items = [
+        {name: "Higher Ground", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/116eb963276571.5aac2b052fbed.png"},
+        {name: "Funk Water", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e4209c63188451.5aa8a9cee57f6.jpg"},
+        {name: "Domain of the Gods", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/83c37261927485.5a7e479855b63.jpg"},
+        {name: "Red Threads", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/fbcb3356154929.59a318472283c.png"},
+        {name: "Beautiful & Strange", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/f3ad4357121865.59c9c937a7ff4.png"},
+        {name: "Desire & Innocence", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/7283ad53432795.5934c5b08e214.png"},
+        {name: "The Knotted Sepal", src: "https://mir-cdn.behance.net/v1/rendition/project_modules/fs/d8381749920273.5aaef2a5d9146.jpg"},
+        {name: "Living Museum", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cca87348882709.593628e156a4f.png"},
+    ];
+
+    $scope.setStep = function(index){
+        $scope.step = index;
+    };
+
+    $scope.goTo = function(index){
+        console.log("going to " + $scope.items[index].name);
+        $scope.clicked=true;
+        $timeout(function () {
+            $state.go('detail', {id: index});
+        }, 600);
+
+    };
 
     angular.element($window).bind("wheel", function(e) {
         if($scope._timeout){
@@ -137,6 +172,28 @@ app.controller('portCtrl', function($scope, $window, $state, $timeout) {
             };
         },250);
     });
+});
+
+app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $stateParams){
+    $scope.items = [
+        {name: "Higher Ground", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/116eb963276571.5aac2b052fbed.png"},
+        {name: "Funk Water", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e4209c63188451.5aa8a9cee57f6.jpg"},
+        {name: "Domain of the Gods", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/83c37261927485.5a7e479855b63.jpg"},
+        {name: "Red Threads", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/fbcb3356154929.59a318472283c.png"},
+        {name: "Beautiful & Strange", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/f3ad4357121865.59c9c937a7ff4.png"},
+        {name: "Desire & Innocence", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/7283ad53432795.5934c5b08e214.png"},
+        {name: "The Knotted Sepal", src: "https://mir-cdn.behance.net/v1/rendition/project_modules/fs/d8381749920273.5aaef2a5d9146.jpg"},
+        {name: "Living Museum", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cca87348882709.593628e156a4f.png"},
+    ];
+
+    var id = $stateParams.id; 
+    $scope.name = $scope.items[id].name;
+
+    $scope.close = function(){
+        $state.go('portfolio');
+    }
+
+
 });
 
 app.controller('projCtrl', function($scope, $window, $state, $timeout) {

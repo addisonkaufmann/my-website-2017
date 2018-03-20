@@ -155,6 +155,10 @@
 .align-center {
   text-align: center; }
 
+.portfolio-detail-mg {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
 p {
   font-family: Archer-Book, serif;
   font-size: 12pt; }

@@ -1,7 +1,29 @@
 <div class="bg-blue-secondary bg-cover " style="overflow-y: auto;">
-	<h1 class="blue-primary animated fadeInUp">	<i style="cursor: pointer" class="fa fa-times" ng-click="close()" aria-hidden="true"></i>{{'  ' + name}}</h1>
+
+	<i style="cursor: pointer; font-size: 30px; float: left; margin-left: 15px;" class="fa fa-times blue-primary portfolio-detail-mg" ng-click="close()" aria-hidden="true"></i>
+
+
+		
+	<!-- <h1 class="blue-primary animated fadeInUp" style="float: left; margin: 15px;">
+		<i style="cursor: pointer; font-size: 30px;" class="fa fa-times" ng-click="close()" aria-hidden="true"></i>
+	</h1>
+	<h1 class="blue-primary animated fadeInUp portfolio-detail-title align-center" style="margin: 0 auto; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+		<i style="cursor: pointer; font-size: 30px;" ng-show="id!==0" class="fa fa-chevron-left" ng-click="goLeft()" aria-hidden="true"></i>
+		{{'  ' + name}}
+		<i style="cursor: pointer; font-size: 30px;" ng-if="id!==items.length" class="fa fa-chevron-right" ng-click="goRight()" aria-hidden="true"></i>
+	</h1> -->
 
 	<div class="container">
+		<div class="row portfolio-detail-mg">
+			<div class="col-12 col-lg-10 offset-lg-1">
+				<h1 class="align-center blue-primary">				
+					<i style="cursor: pointer; font-size: 30px;" ng-show="id!==0" class="fa fa-chevron-left" ng-click="goLeft()" aria-hidden="true"></i>
+					{{'  ' + name}}
+					<i style="cursor: pointer; font-size: 30px;" ng-if="id!==items.length-1" class="fa fa-chevron-right" ng-click="goRight()" aria-hidden="true"></i>
+				</h1>
+			</div>
+		</div>
+
 		<div class="row animated fadeInUp" ng-if="name=='Higher Ground'">
 			<div class="col-12 col-lg-10 offset-lg-1">
 				<img class="detail-margin img-fluid" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/116eb963276571.5aac2b052fbed.png"/>

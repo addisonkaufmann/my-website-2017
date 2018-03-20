@@ -1,6 +1,6 @@
 
-<div class="row bg-blue-secondary ">
-	<div class="col-12 col-sm-4 bg-cover bg-blue-secondary animated fadeInRight" style="z-index: 2;" ng-class="{'fadeOutLeft': clicked}">
+<div class="row bg-blue-secondary">
+	<div class="col-12 col-sm-4 bg-cover bg-blue-secondary animated fadeInRight" style="z-index: 2; overflow-y: auto; overflow-x: hidden;" ng-class="{'fadeOutLeft': clicked}">
 		<h1 class="purple-secondary" style="font-size: 70px;" >Design<br/> Portfolio</h1>
 		<h3 class="arrow-left animated fadeInRight d-none d-sm-block d-md-block d-lg-block d-xl-block">
 			<a href="#home/name">
@@ -8,7 +8,9 @@
 				Back
 			</a>
 		</h3>
-		<div style="right: 15px; margin-top: 70px;">
+
+
+		<div style="right: 15px; margin-top: 70px; float: right;">
 			<h4 ng-repeat="item in items" ng-click="goTo($index)" class="align-right pink-primary portfolio-item-name" ng-mouseover="setStep($index)">{{item.name}}</h4>
 		</div>
 	</div>

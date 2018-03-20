@@ -184,13 +184,21 @@ app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $st
         {name: "Living Museum", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cca87348882709.593628e156a4f.png"},
     ];
 
-    var id = $stateParams.id; 
+    var id = parseInt($stateParams.id); 
+    $scope.id = id;
     $scope.name = $scope.items[id].name;
 
     $scope.close = function(){
         $state.go('portfolio');
-    }
+    };
 
+    $scope.goLeft = function(){
+        $state.go('detail', {id: id-1})
+    };
+
+    $scope.goRight = function(){
+        $state.go('detail', {id: id+1})
+    };
 
 });
 

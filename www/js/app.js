@@ -48,18 +48,54 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/portfolio',
             templateUrl: 'templates/portfolio.html',
             controller: 'portCtrl',
+            resolve: {
+                items: function($http){
+                    var path = "assets/json/portfolio.json";
+
+                    return $http.get(path).then(function onSuccess(response){
+                        return response.data;
+                    })
+                    .catch(function onError(response){
+                        return [];
+                    });
+                }
+            }
         })
 
         .state('detail', {
             url: '/:type/detail/:id',
             templateUrl: 'templates/portfolio-detail.html',
-            controller: 'portDetailCtrl'
+            controller: 'portDetailCtrl', 
+            resolve: {
+                items: function($http, $stateParams){
+                    var path = "assets/json/" + $stateParams.type + ".json";
+
+                    return $http.get(path).then(function onSuccess(response){
+                        return response.data;
+                    })
+                    .catch(function onError(response){
+                        return [];
+                    });
+                }
+            }
         })
 
         .state('projects', {
             url: '/projects',
             templateUrl: 'templates/projects.html',
-            controller: 'projCtrl'
+            controller: 'projCtrl', 
+            resolve: {
+                items: function($http){
+                    var path = "assets/json/projects.json";
+
+                    return $http.get(path).then(function onSuccess(response){
+                        return response.data;
+                    })
+                    .catch(function onError(response){
+                        return [];
+                    });
+                }
+            }
         })
 
 
@@ -107,7 +143,7 @@ app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
                 } else if (e.wheelDeltaX > 0){
                     console.log('go to projects ' + e.wheelDeltaX);
                     $state.go('projects');
-                };
+                }
             },250);
         }
     });
@@ -128,22 +164,12 @@ app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
 });
 
 
-app.controller('portCtrl', function($scope, $window, $state, $timeout, $stateParams) {
+app.controller('portCtrl', function($scope, $window, $state, $timeout, $stateParams, items) {
     $scope._timeout  = null;
-    console.log('port');
     $scope.step = -1;
     $scope.clicked = false;
 
-
-    $scope.items = [
-        {name: "Higher Ground", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/116eb963276571.5aac2b052fbed.png"},
-        {name: "Funk Water", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e4209c63188451.5aa8a9cee57f6.jpg"},
-        {name: "Domain of the Gods", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/83c37261927485.5a7e479855b63.jpg"},
-        {name: "Red Threads", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/fbcb3356154929.59a318472283c.png"},
-        {name: "Desire & Innocence", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/7283ad53432795.5934c5b08e214.png"},
-        {name: "The Knotted Sepal", src: "https://mir-cdn.behance.net/v1/rendition/project_modules/fs/d8381749920273.5aaef2a5d9146.jpg"},
-        {name: "Living Museum", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cca87348882709.593628e156a4f.png"},
-    ];
+    $scope.items = items;
 
     $scope.setStep = function(index){
         $scope.step = index;
@@ -168,22 +194,14 @@ app.controller('portCtrl', function($scope, $window, $state, $timeout, $statePar
             if (e.wheelDeltaX > 0){
                 console.log('go to home ' + e.wheelDeltaX);
                 $state.go('home.name');
-            };
+            }
         },250);
     });
 });
 
-app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $stateParams){
-    
-    $scope.items = [
-        {name: "Higher Ground", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/116eb963276571.5aac2b052fbed.png"},
-        {name: "Funk Water", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e4209c63188451.5aa8a9cee57f6.jpg"},
-        {name: "Domain of the Gods", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/83c37261927485.5a7e479855b63.jpg"},
-        {name: "Red Threads", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/fbcb3356154929.59a318472283c.png"},
-        {name: "Desire & Innocence", src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/7283ad53432795.5934c5b08e214.png"},
-        {name: "The Knotted Sepal", src: "https://mir-cdn.behance.net/v1/rendition/project_modules/fs/d8381749920273.5aaef2a5d9146.jpg"},
-        {name: "Living Museum", src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cca87348882709.593628e156a4f.png"},
-    ];
+app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $stateParams, items){
+
+    $scope.items = items;
 
     var id = parseInt($stateParams.id); 
     var type = $stateParams.type;
@@ -195,27 +213,22 @@ app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $st
     };
 
     $scope.goLeft = function(){
-        $state.go('detail', {id: id-1, type: type})
+        $state.go('detail', {id: id-1, type: type});
     };
 
     $scope.goRight = function(){
-        $state.go('detail', {id: id+1, type: type})
+        $state.go('detail', {id: id+1, type: type});
     };
 
 });
 
-app.controller('projCtrl', function($scope, $window, $state, $timeout) {
+app.controller('projCtrl', function($scope, $window, $state, $timeout, items) {
     $scope._timeout  = null;
     $scope.step = -1;
     $scope.clicked = false;
 
-
-    $scope.items = [
-        {name: "Ripple Effect", src: "assets/RippleEffect.png", style: {'background-color': 'white'}},
-        {name: "Follower", src: "assets/Follower.png", style: {'background-color': '#f2f2f2'}},
-        {name: "TakeCharge", src: "assets/TakeCharge.png", style: {'background-color': '#fffaf8'}}
-    ];
-
+    console.log(items);
+    $scope.items =items;
     $scope.setStep = function(index){
         $scope.step = index;
         console.log('set step to ' + $scope.step);

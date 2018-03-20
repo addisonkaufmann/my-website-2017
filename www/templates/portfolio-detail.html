@@ -1,6 +1,6 @@
 <div class="bg-blue-secondary bg-cover " style="overflow-y: auto;">
 
-	<i style="cursor: pointer; font-size: 30px; float: left; margin-left: 15px;" class="fa fa-times blue-primary portfolio-detail-mg" ng-click="close()" aria-hidden="true"></i>
+	<i style="cursor: pointer; font-size: 30px; float: left; margin-left: 15px;" class="fa fa-times blue-primary portfolio-detail-mg d-none d-sm-block" ng-click="close()" aria-hidden="true"></i>
 
 
 		
@@ -14,14 +14,24 @@
 	</h1> -->
 
 	<div class="container">
-		<div class="row portfolio-detail-mg">
-			<div class="col-12 col-lg-10 offset-lg-1">
-				<h1 class="align-center blue-primary">				
-					<i style="cursor: pointer; font-size: 30px;" ng-show="id!==0" class="fa fa-chevron-left" ng-click="goLeft()" aria-hidden="true"></i>
+		<div class="row portfolio-detail-mg  align-items-center">
+				<div class="col-1 offset-1 offset-sm-1 offset-lg-2 ">
+					<h1 class="align-right">
+						<i style="cursor: pointer; font-size: 30px;" ng-show="id!==0" class="fa fa-chevron-left blue-primary" ng-click="goLeft()" aria-hidden="true"></i>
+					</h1>
+				</div>
+ 				<div class="col-8 col-sm-8 col-lg-6">
+					<h1 class="align-center blue-primary">				
 					{{'  ' + name}}
-					<i style="cursor: pointer; font-size: 30px;" ng-if="id!==items.length-1" class="fa fa-chevron-right" ng-click="goRight()" aria-hidden="true"></i>
-				</h1>
-			</div>
+					</h1>
+				</div>
+				<div class="col-1">
+					<h1 class="align-left">
+						<i style="cursor: pointer; font-size: 30px;" ng-if="id!==items.length-1" class="fa fa-chevron-right blue-primary" ng-click="goRight()" aria-hidden="true"></i>
+					</h1>
+				</div>
+
+			
 		</div>
 
 		<div class="row animated fadeInUp" ng-if="name=='Higher Ground'">

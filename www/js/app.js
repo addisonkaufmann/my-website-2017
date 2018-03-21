@@ -64,8 +64,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         .state('detail', {
             url: '/:type/detail/:id',
-            templateUrl: 'templates/portfolio-detail.html',
-            controller: 'portDetailCtrl', 
+            templateUrl: 'templates/detail.html',
+            controller: 'detailCtrl', 
             resolve: {
                 items: function($http, $stateParams){
                     var path = "assets/json/" + $stateParams.type + ".json";
@@ -199,7 +199,7 @@ app.controller('portCtrl', function($scope, $window, $state, $timeout, $statePar
     });
 });
 
-app.controller('portDetailCtrl', function($scope, $window, $state, $timeout, $stateParams, items){
+app.controller('detailCtrl', function($scope, $window, $state, $timeout, $stateParams, items){
 
     $scope.items = items;
 

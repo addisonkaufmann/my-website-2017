@@ -88,6 +88,10 @@
 .detail-margin {
   margin-bottom: 30px; }
 
+.detail-text {
+  color: white;
+  margin-bottom: 30px; }
+
 .videoWrapper {
   position: absolute;
   top: 0;

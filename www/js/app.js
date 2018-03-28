@@ -161,6 +161,45 @@ app.controller('homeCtrl', function($scope, $window, $state, $timeout) {
         console.log('scrolled down: going to pages['+$scope.index+'] ' + pages[$scope.index] + ' ' + $scope.transition);
         $state.go(pages[$scope.index]);
     };
+
+});
+
+app.controller('expCtrl',  function($scope, $timeout){
+    var steps = 3;
+
+    // $scope.outLeft = [];
+    // $scope.outRight = [];
+    $scope.inLeft = [];
+    $scope.inRight = [];
+    for (var i = 0; i < steps; i++){
+        $scope.inLeft[i] = false;
+        $scope.inRight[i] = false;
+    }
+
+
+
+    $scope.step = 0;
+    $scope.stepLeft = function(){
+        console.log("step left from " + $scope.step);
+        if ($scope.step > 0){
+            $scope.step--;
+            $scope.inLeft[$scope.step] = true;
+             $timeout(function () {
+                $scope.inLeft[$scope.step] = false;
+            }, 1000);
+        }  
+    };
+
+    $scope.stepRight = function(){
+        console.log("step right from " + $scope.step);
+        if ($scope.step < steps - 1){
+            $scope.step++;
+            $scope.inRight[$scope.step] = true;
+            $timeout(function () {
+                $scope.inRight[$scope.step] = false;
+            }, 1000);
+        }        
+    };
 });
 
 

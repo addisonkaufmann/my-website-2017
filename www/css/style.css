@@ -1,10 +1,10 @@
 .yellow-primary {
   color: #FCBA65; }
 
-.yellow-secondary, .edu-degree, .exp-date, .arrow-left, .arrow-right, .arrow-down, .arrow-up, .contact-header {
+.yellow-secondary, .edu-degree, .exp-date, .arrow-left, .arrow-right, .arrow-down, .arrow-up, .contact-header, .exp-arrow {
   color: #F19170; }
 
-.pink-primary, .custom-nav-links a, .custom-nav-links a:hover, .edu-header, .exp-company, .exp-arrow {
+.pink-primary, .custom-nav-links a, .custom-nav-links a:hover, .edu-header, .exp-company, .exp-arrow:hover {
   color: #E66879; }
 
 .magenta-primary {

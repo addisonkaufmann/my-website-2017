@@ -341,8 +341,12 @@ body {
 	margin-left: 5px; 
 	margin-right: 5px; 
 	font-size: 16px;
+	@extend .yellow-secondary;
+}
+.exp-arrow:hover {
 	@extend .pink-primary;
 }
+
 
 .full-opacity {
 	opacity: 1;
